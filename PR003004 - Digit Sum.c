@@ -23,12 +23,15 @@ void digit_dp_init(){
 	        prec[i+1][1] = (1llu*(i+1)*expon);
 	        expon = (1ll*expon*10);
 	        if(i>=2){
+	        	// same above above but we need to put a non-zero digit at start 1 to 9  	
+	        	// 9 choices at start and suffixpart is counted same as above
 	        	prec[i][0] = (1llu*9*prec[i-1][1]);
 	        	prec[i][0] = modadd(prec[i][0],prec[i-1][0]);
 	        }
 	}
 	return;
 }
+
  
 lli countDigit(lli n,int digit) {
     int where=0; lli prefixDigit=0,ans=0;
