@@ -28,7 +28,7 @@ void digit_dp_init(){
 	        prec[i+1][1] = (1ll*(i+1)*expon)%mod;
 	        expon = (1ll*expon*10)%mod;
 	        if(i>=2){
-	        	prec[i][0] = (1ll*9*prec[i-1][1])%mod;
+	        	rem = (1ll*(c1)*(prec[n-where][1]/(n-where)))%mod; // precompute powers of 10 ?   
 	        	prec[i][0] = modadd(prec[i][0],prec[i-1][0]);
 	        }
 	}
